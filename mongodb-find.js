@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient;
+const {MongoClient, ObjectID} = require('mongodb');
 
 const url = 'mongodb://localhost:27017';
 const dbName = 'TodoApp';
@@ -13,7 +13,7 @@ MongoClient.connect(url, (err, client) => {
         console.log('Connected to MongoDb Server.');
     
         const db = client.db(dbName);
-        const collection =  db.collection('Users');
+        const collection =  db.collection('Todos');
 
         // db.collection('Users').find({
         //     name : 'Vicky Dx'
